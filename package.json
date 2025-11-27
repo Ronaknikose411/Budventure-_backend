@@ -1,0 +1,27 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "backend/\r     │\r │   │── config/\r │   │   ├── db.js               # MongoDB connection\r │   │   ├── env.js              # Environment variables\r │   │   └── socket.js           # Socket.IO server setup\r │   │\r │   │── models/\r │   │   ├── Admin.js            # Admin schema (SuperAdmin / Admin)\r │   │   ├── TrainingData.js     # AI Training data schema\r │   │   ├── ChatSession.js      # User chat session schema\r │   │   └── Message.js          # Optional (if storing messages separately)\r │   │\r │   │── middlewares/\r │   │   ├── authMiddleware.js   # JWT auth check for admins\r │   │   ├── roleMiddleware.js   # checking role\r │   │   └── errorHandler.js     # Global error response handler\r │   │\r │   │── services/\r │   │   ├── aiService.js        # AI matching logic (keyword-based)\r │   │   ├── chatService.js      # Chat session CRUD, handoff logic\r │   │   └── trainingService.js  # Training data CRUD logic\r │   │\r │   │── controllers/\r │   │   ├── authController.js\r │   │   ├── trainingController.js\r │   │   ├── chatController.js\r │   │   ├── widgetController.js # Load chat widget config + greeting\r │   │   └── adminChatController.js # Admin replies, accept chat, close chat\r │   │\r │   │── routes/\r │   │   ├── authRoutes.js\r │   │   ├── trainingRoutes.js\r │   │   ├── chatRoutes.js\r │   │   ├── widgetRoutes.js\r │   │   └── adminChatRoutes.js\r │   │\r │   │── utils/\r │   │   ├── generateToken.js\r │   │   ├── logger.js\r │   │   └── textSimilarity.js   # Keyword matching logic\r │   │\r │   │── app.js                  # Express app config\r │   │── server.js               # HTTP + Socket.IO bootstrap\r     │\r     │                    \r     │── .env    \r     │── package.json\r     │── README.md",
+  "main": "app.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^9.0.0",
+    "socket.io": "^4.8.1",
+    "uuid": "^13.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.11"
+  }
+}
